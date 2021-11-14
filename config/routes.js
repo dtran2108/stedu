@@ -9,26 +9,70 @@ export default [
           {
             name: 'login',
             path: '/user/login',
-            component: './user/Login',
-          },
-        ],
+            component: './user/Login'
+          }
+        ]
       },
       {
-        component: './404',
+        component: './404'
+      }
+    ]
+  },
+  {
+    path: '/hoc-sinh',
+    name: 'Học sinh',
+    icon: 'schedule',
+    routes: [
+      {
+        path: '/hoc-sinh/danh-sach-hoc-sinh',
+        name: 'Danh sách học sinh',
+        icon: 'audit',
+        component: './StudentList/StudentList'
       },
-    ],
+      {
+        path: '/hoc-sinh/tiep-nhan-hoc-sinh',
+        name: 'Tiếp nhận học sinh',
+        icon: 'form',
+        component: './InputStudent/InputStudent'
+      },
+    ]
   },
   {
-    path: '/tiep-nhan-hoc-sinh',
-    name: 'Tiếp nhận học sinh',
-    icon: 'form',
-    component: './InputStudent/InputStudent',
+    path: '/lap-danh-sach-lop',
+    name: 'Lập danh sách lớp',
+    icon: 'diff',
+    component: './InputClass/InputClass'
   },
   {
-    path: '/danh-sach-hoc-sinh',
-    name: 'Danh sách học sinh',
-    icon: 'audit',
-    component: './StudentList/StudentList',
+    path: '/nhap-bang-diem-mon',
+    name: 'Nhập bảng điểm môn',
+    icon: 'appstore',
+    component: './InputScore/InputScore'
+  },
+  {
+    path: '/bao-cao-tong-ket',
+    name: 'Báo cáo tổng kết',
+    icon: 'copy',
+    routes: [
+      {
+        path: '/bao-cao-tong-ket/tong-ket-mon',
+        name: 'Tổng kết môn',
+        icon: 'audit',
+        component: './CloseSubject/CloseSubject'
+      },
+      {
+        path: '/bao-cao-tong-ket/tong-ket-hoc-ky',
+        name: 'Tổng kết học kỳ',
+        icon: 'form',
+        component: './CloseSemester/CloseSemester'
+      },
+    ]
+  },
+  {
+    path: '/quy-dinh',
+    name: 'Thay đổi quy định',
+    icon: 'setting',
+    component: './Policy/Policy'
   },
   {
     path: '/admin',
@@ -46,19 +90,13 @@ export default [
       // {
       //   component: './404',
       // },
-    ],
-  },
-  {
-    name: 'Search',
-    icon: 'table',
-    path: '/list',
-    component: './TableList',
+    ]
   },
   {
     path: '/',
-    redirect: '/welcome',
+    redirect: '/welcome'
   },
   {
-    component: './404',
-  },
+    component: './404'
+  }
 ];

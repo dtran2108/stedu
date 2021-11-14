@@ -4,6 +4,7 @@ import { Card, Table, Typography, Form, Input, Select, Row, Col, DatePicker, But
 import { useIntl, FormattedMessage } from 'umi';
 import { getStudents } from '@/services/students/api';
 import { toDateLocal } from '@/utils/UtilDate';
+import styles from './StudentList.less';
 
 export default () => {
   const [students, setStudents] = useState([]);
@@ -29,40 +30,28 @@ export default () => {
       key: 'fullName'
     },
     {
-      title: 'Ngày sinh',
-      dataIndex: 'dayOfBirth',
-      key: 'dayOfBirth',
-      render: (text) => {
-        const timeStamp = new Date(text);
-        return <span>{timeStamp.toLocaleDateString('vi-VN')}</span>;
-      }
-    },
-    {
-      title: 'Giới tính',
-      dataIndex: 'sex',
-      key: 'sex',
-      render: (text) => <span>{text ? 'Nữ' : 'Nam'}</span>
-    },
-    {
       title: 'Lớp',
       dataIndex: 'class',
       key: 'class',
       render: (text) => <span>{text ? text : '-'}</span>
     },
     {
-      title: 'Email',
-      dataIndex: 'email',
-      key: 'email'
+      title: 'TB học kỳ 1',
+      dataIndex: 'semester1Score',
+      key: 'semester1Score',
+      render: (text) => <span>{text ? text / 10 : '-'}</span>
     },
     {
-      title: 'Địa chỉ',
-      dataIndex: 'address',
-      key: 'address'
+      title: 'TB học kỳ 2',
+      dataIndex: 'semester2Score',
+      key: 'semester2Score',
+      render: (text) => <span>{text ? text / 10 : '-'}</span>
     }
   ];
 
   return (
     <Card>
+      <Input.Search placeholder="Tìm tên học sinh" size="large" style={{ width: '300px', marginBottom: '16px' }} />
       <Table columns={columns} dataSource={students} loading={loading} />
     </Card>
   );
