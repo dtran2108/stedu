@@ -86,6 +86,13 @@ const Login = () => {
           initialValues={{
             autoLogin: true,
           }}
+          submitter={{
+            // 配置按钮文本
+            searchConfig: {
+              resetText: 'Reset',
+              submitText: 'Login',
+            },
+          }}
           actions={[]}
           onFinish={async (values) => {
             await handleSubmit(values);
