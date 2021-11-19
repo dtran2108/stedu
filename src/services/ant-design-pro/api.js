@@ -25,6 +25,8 @@ export async function login(body, options) {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': '*'
     },
     data: body,
     ...(options || {}),

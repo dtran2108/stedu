@@ -94,7 +94,7 @@ export default [
   },
   {
     path: '/',
-    redirect: '/welcome'
+    redirect: '/hoc-sinh/danh-sach-hoc-sinh'
   },
   {
     component: './404'

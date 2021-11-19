@@ -7,9 +7,6 @@
   "servers": [
     {
       "url": "https://stedu.vercel.app/"
-    },
-    {
-      "url": "http://localhost:8000/"
     }
   ],
   "paths": {
